@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
           stream:
               FirebaseFirestore.instance.collection('mycollection').snapshots(),
           builder: (context, snapshot) {
-            if (!snapshot.hasData) return const Text('Loading');
+            if (!snapshot.hasData) return const Text('Loading. Do your Firestore rules still allow access?');
 
             return ListView.builder(
                 itemExtent: 80,
